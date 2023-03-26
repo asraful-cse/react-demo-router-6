@@ -1,17 +1,18 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import About from "./components/about/About";
-import Blog from "./components/blog/Blog";
-import Contact from "./components/contact/Contact";
+import About from "./components/About/About";
+import Blog from "./components/Blog/Blog";
+import Contact from "./components/Contact/Contact";
+import FriendDetails from "./components/FriendDetails/FriendDetails";
 import Friends from "./components/Friends/Friends";
-import Home from "./components/home/Home";
+import Home from "./components/Home/Home";
 import Main from "./layout/navLayOut/NavLayout";
 
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Main/>,
+      element: <Main />,
       children: [
         { path: "/", element: <Home /> },
         { path: "home", element: <Home /> },
@@ -32,6 +33,19 @@ function App() {
             return fetch(`https://jsonplaceholder.typicode.com/users`);
           },
           element: <Friends />,
+        },
+
+        {
+          path: "/friend/:friendId",
+
+          loader: async ({ params }) => {
+            // console.log(params.friendId);
+            return fetch(
+              `https://jsonplaceholder.typicode.com/users/${params.friendId}`
+            );
+          },
+
+          element: <FriendDetails />,
         },
       ],
     },

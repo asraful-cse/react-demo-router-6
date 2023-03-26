@@ -1,10 +1,10 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import Friend from "./Friend";
+import Friend from "../Friend/Friend";
 
 const Friends = () => {
   const friends = useLoaderData();
-
+ // console.log(friends);
   return (
     <div >
       <h1 className="text-center">Friens Lists: {friends.length}</h1>

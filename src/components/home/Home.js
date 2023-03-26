@@ -1,6 +1,6 @@
 import React from "react";
 
-import Phones from "../phones/Phones";
+import Phones from "../Phones/Phones";
 
 const Home = () => {
   return (

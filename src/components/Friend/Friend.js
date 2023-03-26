@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Friend = ({ friend }) => {
   const {id, name, username, email } = friend;
-  console.log(friend);
+  // console.log(friend);
   return (
     <div className="p-4 bg-slate-600 text-white rounded">
       <h1>Name: {name}</h1>
